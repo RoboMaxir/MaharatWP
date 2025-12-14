@@ -1,0 +1,377 @@
+/* 
+ * Responsive styles for Professional Project Theme
+ * This file contains all responsive design adjustments
+ */
+
+/* Mobile Styles (up to 480px) */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 0.5rem;
+    }
+    
+    .header-container {
+        padding: 0.75rem 0.5rem;
+    }
+    
+    .site-title {
+        font-size: 1.25rem;
+    }
+    
+    .site-navigation ul {
+        flex-direction: column;
+    }
+    
+    .site-navigation li {
+        margin: 0.5rem 0;
+    }
+    
+    .content-area {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .post, .project {
+        padding: 1rem;
+    }
+    
+    .post-title {
+        font-size: 1.25rem;
+    }
+    
+    .project-meta {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-filters {
+        flex-direction: column;
+    }
+    
+    .pagination {
+        flex-wrap: wrap;
+    }
+    
+    .page-numbers {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Small Tablet Styles (481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .header-container {
+        padding: 1rem;
+    }
+    
+    .content-area {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .project-meta {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+    
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .project-filters {
+        justify-content: center;
+    }
+}
+
+/* Tablet Styles (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .content-area {
+        grid-template-columns: 2fr 1fr;
+    }
+    
+    .project-meta {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+    
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Desktop Styles (1025px to 1200px) */
+@media (min-width: 1025px) and (max-width: 1200px) {
+    .container {
+        max-width: 1000px;
+    }
+    
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Large Desktop Styles (1201px and above) */
+@media (min-width: 1201px) {
+    .projects-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+/* Orientation adjustments */
+@media (orientation: landscape) and (max-height: 500px) {
+    .site-header {
+        position: relative;
+    }
+}
+
+@media (orientation: portrait) and (max-width: 768px) {
+    .content-area {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .loading {
+        animation: none;
+    }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    a,
+    button,
+    input,
+    select,
+    textarea {
+        border: 1px solid;
+    }
+    
+    .post,
+    .project {
+        border: 1px solid;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+        color: #e0e0e0;
+    }
+    
+    .site-header {
+        background-color: #1e1e1e;
+    }
+    
+    .post, .project {
+        background-color: #1e1e1e;
+    }
+    
+    .widget-area {
+        background-color: #2d2d2d;
+    }
+    
+    .site-footer {
+        background-color: #1e1e1e;
+    }
+    
+    .search-field,
+    .form-input {
+        background-color: #2d2d2d;
+        color: #e0e0e0;
+        border-color: #444;
+    }
+    
+    .comment {
+        background-color: #2d2d2d;
+        border-color: #444;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .site-header,
+    .site-navigation,
+    .widget-area,
+    .site-footer,
+    .post-navigation,
+    .comments-area,
+    .page-links {
+        display: none !important;
+    }
+    
+    .site-main {
+        padding: 0;
+    }
+    
+    .post, .project {
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+    
+    a {
+        color: #000 !important;
+        text-decoration: underline;
+    }
+    
+    a:after {
+        content: " (" attr(href) ") ";
+        font-size: 0.8em;
+        word-break: break-all;
+    }
+    
+    .project-meta {
+        page-break-inside: avoid;
+    }
+}
+
+/* Focus styles for accessibility */
+@media (prefers-reduced-motion: no-preference) {
+    a,
+    button,
+    input,
+    select,
+    textarea,
+    [tabindex] {
+        transition: all 0.2s ease-in-out;
+    }
+}
+
+/* Screen reader only content */
+.screen-reader-text {
+    position: absolute !important;
+    clip: rect(1px, 1px, 1px, 1px);
+    overflow: hidden;
+    height: 1px;
+    width: 1px;
+    word-wrap: normal !important;
+    margin: -1px;
+}
+
+.screen-reader-text:focus {
+    display: block;
+    top: 5px;
+    left: 5px;
+    z-index: 100000;
+    clip: auto !important;
+    width: auto;
+    height: auto;
+    padding: 15px 23px 14px;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    background-color: #fff;
+    color: #0073aa;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: normal;
+    text-decoration: none;
+    text-transform: none;
+}
+
+/* Skip link */
+.skip-link {
+    position: fixed;
+    top: -40px;
+    left: 6px;
+    background: #007cba;
+    color: white;
+    padding: 12px;
+    text-decoration: none;
+    z-index: 100000;
+    border-radius: 0 0 4px 4px;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Responsive embeds */
+.wp-block-embed,
+.wp-embedded-content {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    height: auto;
+}
+
+.wp-block-embed iframe,
+.wp-embedded-content iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Responsive images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive tables */
+table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 600px) {
+    table {
+        font-size: 0.875em;
+    }
+    
+    table th,
+    table td {
+        padding: 0.5em;
+    }
+}
+
+/* Responsive buttons */
+@media (max-width: 480px) {
+    .button,
+    button,
+    input[type="submit"],
+    input[type="reset"],
+    input[type="button"] {
+        display: block;
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

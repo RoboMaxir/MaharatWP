@@ -1,1 +1,14 @@
-<!-- wp:pattern {"slug":"twentytwentyfive/footer"} /-->
+<!-- wp:group {"tagName":"footer","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"},"margin":{"top":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
+<footer class="wp-block-group" style="margin-top:var(--wp--preset--spacing--60);padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)">
+	<!-- wp:group {"layout":{"type":"flex","justifyContent":"space-between"}} -->
+	<div class="wp-block-group">
+		<!-- wp:paragraph {"fontSize":"small"} -->
+		<p class="has-small-font-size">© <?php echo date('Y'); ?> Professional Project Theme. All rights reserved.</p>
+		<!-- /wp:paragraph -->
+		<!-- wp:paragraph {"fontSize":"small"} -->
+		<p class="has-small-font-size"><!-- wp:site-title {"level":0,"isLink":false} /--></p>
+		<!-- /wp:paragraph -->
+	</div>
+	<!-- /wp:group -->
+</footer>
+<!-- /wp:group -->
